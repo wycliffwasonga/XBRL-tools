@@ -15,7 +15,6 @@
         "tsConfig": "apps/xbrl-viewer/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          "apps/xbrl-viewer/src/favicon.ico",
           "apps/xbrl-viewer/src/assets"
         ],
         "styles": ["apps/xbrl-viewer/src/styles.scss"],

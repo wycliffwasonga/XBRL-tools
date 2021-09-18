@@ -7,7 +7,8 @@
       "executor": "@nrwl/cypress:cypress",
       "options": {
         "cypressConfig": "apps/xbrl-viewer-e2e/cypress.json",
-        "devServerTarget": "xbrl-viewer:serve:development"
+        "devServerTarget": "xbrl-viewer:serve:development",
+        "exit": false
       },
       "configurations": {
         "production": {
