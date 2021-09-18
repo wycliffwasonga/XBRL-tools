@@ -1,6 +1,7 @@
 import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { XBRLViewerModule } from '@xbrl-tools/viewer-lib';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
@@ -11,6 +12,7 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [AppComponent],
+      imports: [XBRLViewerModule]
     }).compileComponents();
   });
 
@@ -24,8 +26,8 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render xbrl-tool-viewer component', () => {
-    const el = de.query(By.css('xbrl-tool-viewer')).nativeElement;
+  it('should render xbrl-tools-viewer component', () => {
+    const el = de.query(By.css('xbrl-tools-viewer')).nativeElement;
     expect(el).toBeTruthy();
   });
 });
