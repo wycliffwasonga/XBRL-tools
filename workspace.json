@@ -2,7 +2,8 @@
   "version": 2,
   "projects": {
     "xbrl-viewer": "apps/xbrl-viewer",
-    "xbrl-viewer-e2e": "apps/xbrl-viewer-e2e"
+    "xbrl-viewer-e2e": "apps/xbrl-viewer-e2e",
+    "xbrl-viewer-lib": "libs/xbrl-viewer-lib"
   },
   "cli": {
     "defaultCollection": "@nrwl/angular"

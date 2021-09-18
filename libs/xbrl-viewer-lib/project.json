@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/xbrl-viewer-lib",
+  "sourceRoot": "libs/xbrl-viewer-lib/src",
+  "prefix": "xbrl-tools",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/xbrl-viewer-lib"],
+      "options": {
+        "jestConfig": "libs/xbrl-viewer-lib/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/xbrl-viewer-lib/src/**/*.ts",
+          "libs/xbrl-viewer-lib/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
