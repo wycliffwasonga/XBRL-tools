@@ -1,0 +1,94 @@
+{
+  "projectType": "application",
+  "root": "apps/xbrl-viewer",
+  "sourceRoot": "apps/xbrl-viewer/src",
+  "prefix": "xbrl-tools",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/xbrl-viewer",
+        "index": "apps/xbrl-viewer/src/index.html",
+        "main": "apps/xbrl-viewer/src/main.ts",
+        "polyfills": "apps/xbrl-viewer/src/polyfills.ts",
+        "tsConfig": "apps/xbrl-viewer/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/xbrl-viewer/src/favicon.ico",
+          "apps/xbrl-viewer/src/assets"
+        ],
+        "styles": ["apps/xbrl-viewer/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/xbrl-viewer/src/environments/environment.ts",
+              "with": "apps/xbrl-viewer/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "xbrl-viewer:build:production"
+        },
+        "development": {
+          "browserTarget": "xbrl-viewer:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "xbrl-viewer:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/xbrl-viewer/src/**/*.ts",
+          "apps/xbrl-viewer/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/xbrl-viewer"],
+      "options": {
+        "jestConfig": "apps/xbrl-viewer/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
